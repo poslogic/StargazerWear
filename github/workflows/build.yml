@@ -1,0 +1,49 @@
+name: Build APK
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.7
+
+      # Works whether you uploaded the zip itself or the unzipped project files
+      - name: Locate project
+        run: |
+          if [ -f StargazerWear.zip ]; then unzip -q -o StargazerWear.zip -d _proj; fi
+          SETTINGS=$(find . -name settings.gradle.kts -not -path './_proj/_proj/*' | head -n 1)
+          [ -n "$SETTINGS" ] || { echo "settings.gradle.kts not found"; exit 1; }
+          DIR=$(dirname "$SETTINGS")
+          echo "PROJECT_DIR=$DIR" >> "$GITHUB_ENV"
+          echo "Project at $DIR"
+
+      - name: Add gradle.properties if missing
+        run: |
+          cd "$PROJECT_DIR"
+          if [ ! -f gradle.properties ]; then
+            printf 'android.useAndroidX=true\norg.gradle.jvmargs=-Xmx3g\nkotlin.code.style=official\n' > gradle.properties
+          fi
+
+      - name: Build debug APK
+        run: |
+          cd "$PROJECT_DIR"
+          gradle assembleDebug --stacktrace
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Stargazer-debug-apk
+          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk
