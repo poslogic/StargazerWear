@@ -66,7 +66,7 @@ Without a computer, an Android phone app such as Bugjaeger or Wear Installer can
 - **Planets**: Keplerian orbital elements from the JPL "Approximate Positions of the Planets" tables (valid 1800 to 2050).
 - **Satellites**: orbit data (TLEs) is downloaded from [CelesTrak](https://celestrak.org) and cached for 12 hours. Positions come from a simplified Kepler model with J2 drift rather than full SGP4.
 - **Visible passes**: counted when the satellite is above 10°, in sunlight, and the Sun is more than 6° below the horizon.
-- **Starlink**: tracks the 80 most recently launched satellites and merges passes within 10 minutes into one "train".
+- **Starlink**: tracks the 150 most recently launched satellites and merges passes within 10 minutes into one "train".
 
 ## Limitations
 
