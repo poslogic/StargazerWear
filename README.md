@@ -14,7 +14,7 @@ A live sky map for your wrist. Point your watch at the sky and see the Sun, Moon
 - **ISS alert**: optional notification 5 minutes before the next visible ISS pass
 - **Planet pages**: picture plus rise, set and highest-point times for the Sun, Moon and each planet
 - **Adjustable screen idle time**: 15 s, 30 s, 1 min, 2 min, 5 min or always on
-- **Flip sky 180°** option
+- **Flat on the wrist**: the top of the watch is the direction you face, with compass style heading (for example 90° E). Settings can flip the view 180° for holding the watch overhead, and switch between true and magnetic north
 
 - **Crown time travel**: on watches with a crown or rotating bezel, turn it clockwise to move the sky forward in time and anticlockwise to go back (up to 7 days). The date and time show only while you turn it, and the sky returns to live 6 seconds after you stop
 - **Check for updates**: Settings checks GitHub for a newer release, downloads it and installs it on the watch
