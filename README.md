@@ -45,14 +45,14 @@ Swipe-to-dismiss is switched off so it doesn't clash with the sideways swipes. P
 1. Put this project in a GitHub repository.
 2. Add the workflow file at `.github/workflows/build.yml`.
 3. Open the **Actions** tab. The **Build APK** workflow runs on every push, or tap **Run workflow**.
-4. When the run turns green, open it and download **Stargazer-debug-apk** from **Artifacts**.
+4. When the run turns green, open it and download **Stargazer** (Stargazer.apk) from **Artifacts**, or take Stargazer.apk from the latest release.
 
 ### With Android Studio
 
 1. Open the `StargazerWear` folder.
 2. Let Gradle sync.
 3. Choose **Build > Build APK(s)**.
-4. The APK is at `app/build/outputs/apk/debug/app-debug.apk`.
+4. The APK is at `app/build/outputs/apk/debug/app-debug.apk (Gradle's name for it)`.
 
 ## Updating from the watch
 
@@ -64,7 +64,7 @@ Enable **Developer options** and **ADB debugging** (or **Wireless debugging**) o
 
 ```
 adb connect <watch-ip>:<port>
-adb install app-debug.apk
+adb install Stargazer.apk
 ```
 
 Without a computer, an Android phone app such as Bugjaeger or Wear Installer can send the APK over Wi-Fi.

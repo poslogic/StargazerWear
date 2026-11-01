@@ -48,16 +48,18 @@ jobs:
           cd "$PROJECT_DIR"
           gradle assembleDebug --stacktrace -PversionCode=${{ github.run_number }}
 
+      - name: Name the APK
+        run: cp "$PROJECT_DIR/app/build/outputs/apk/debug/app-debug.apk" Stargazer.apk
+
       - uses: actions/upload-artifact@v4
         with:
-          name: Stargazer-debug-apk
-          path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk
+          name: Stargazer
+          path: Stargazer.apk
 
       - name: Publish release for in-app updates
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          cp "$PROJECT_DIR/app/build/outputs/apk/debug/app-debug.apk" Stargazer.apk
           gh release create "v1.0.${{ github.run_number }}" Stargazer.apk \
             --repo "${{ github.repository }}" \
             --target "${{ github.sha }}" \
