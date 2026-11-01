@@ -4,6 +4,9 @@ on:
   push:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-24.04
@@ -43,9 +46,20 @@ jobs:
       - name: Build debug APK
         run: |
           cd "$PROJECT_DIR"
-          gradle assembleDebug --stacktrace
+          gradle assembleDebug --stacktrace -PversionCode=${{ github.run_number }}
 
       - uses: actions/upload-artifact@v4
         with:
           name: Stargazer-debug-apk
           path: ${{ env.PROJECT_DIR }}/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Publish release for in-app updates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp "$PROJECT_DIR/app/build/outputs/apk/debug/app-debug.apk" Stargazer.apk
+          gh release create "v1.0.${{ github.run_number }}" Stargazer.apk \
+            --repo "${{ github.repository }}" \
+            --target "${{ github.sha }}" \
+            --title "Stargazer 1.0.${{ github.run_number }}" \
+            --notes "Automated build ${{ github.run_number }}"

@@ -16,6 +16,9 @@ A live sky map for your wrist. Point your watch at the sky and see the Sun, Moon
 - **Adjustable screen idle time**: 15 s, 30 s, 1 min, 2 min, 5 min or always on
 - **Flip sky 180°** option
 
+- **Check for updates**: Settings checks GitHub for a newer release, downloads it and installs it on the watch
+- **Altitude rings**: dashed rings and labels mark 0°, 30° and 60° above the horizon (zenith in the centre)
+
 ## Gestures
 
 | Gesture | What it does |
@@ -48,6 +51,10 @@ Swipe-to-dismiss is switched off so it doesn't clash with the sideways swipes. P
 2. Let Gradle sync.
 3. Choose **Build > Build APK(s)**.
 4. The APK is at `app/build/outputs/apk/debug/app-debug.apk`.
+
+## Updating from the watch
+
+Every build on GitHub publishes a release containing the APK. In **Settings** tap **Check for updates**; if a newer version exists tap **Install update**. The first time, Android asks you to allow Stargazer to install apps. Builds are signed with a fixed key (`app/stargazer.p12`) so updates install over the old version. Moving from a build signed with a different key needs one uninstall first.
 
 ## Install on a watch
 
