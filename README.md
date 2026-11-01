@@ -16,6 +16,7 @@ A live sky map for your wrist. Point your watch at the sky and see the Sun, Moon
 - **Adjustable screen idle time**: 15 s, 30 s, 1 min, 2 min, 5 min or always on
 - **Flip sky 180°** option
 
+- **Crown time travel**: on watches with a crown or rotating bezel, turn it clockwise to move the sky forward in time and anticlockwise to go back (up to 7 days). The date and time show only while you turn it, and the sky returns to live 6 seconds after you stop
 - **Check for updates**: Settings checks GitHub for a newer release, downloads it and installs it on the watch
 - **Altitude rings**: dashed rings and labels mark 0°, 30° and 60° above the horizon (zenith in the centre)
 
@@ -27,6 +28,7 @@ A live sky map for your wrist. Point your watch at the sky and see the Sun, Moon
 | Swipe down | Settings |
 | Swipe left | Sun, Moon and planet pages (keep swiping for the next one) |
 | Swipe right | Back towards the sky screen |
+| Turn crown | Scroll the sky forwards or backwards in time (sky screen) |
 | Tap "Red mode" | Toggle night-vision colours |
 
 Swipe-to-dismiss is switched off so it doesn't clash with the sideways swipes. Press the watch's side button to leave the app.
