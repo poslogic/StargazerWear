@@ -6,6 +6,9 @@ A live sky map for your wrist. Point your watch at the sky and see the Sun, Moon
 
 - **Live sky map** with the Sun (yellow), Moon (greyish blue), all seven planets, 16 bright stars (tinted by colour), the ISS and recent Starlink satellites
 - **Compass-aware**: the map turns as you turn
+- **Pick what to show**: tick any combination of Sun & Moon, Planets, Stars and Satellites in Settings
+- **GPS location** shown in green at the top of the sky screen
+- **Moon phase**: the Moon page shows the current phase name, % lit and a picture of the lit part
 - **Red mode** for night vision (tap "Red mode" on the sky screen)
 - **ISS and Starlink pass predictions**: next visible passes, soonest first, with start time, maximum height, direction and duration
 - **ISS alert**: optional notification 5 minutes before the next visible ISS pass
